@@ -27,6 +27,11 @@ def create_square(square_size):
     for position in positions:
        value = random.randint(1, 10)
        positions[position] = value
+    
+    # Pintando el cuadrado con los valores del diccionario.
+    for cell in positions:
+        
+          
 
     print(positions)
 
