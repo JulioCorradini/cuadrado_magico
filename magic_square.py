@@ -1,6 +1,9 @@
 import random
 
-########################################
+# Tamaño del cuadrado.
+square_size = 3
+
+# Función para generar un cuadrado vacío con tres números aleatóreamente posicionados.
 def generate_empty_square(square_size, positions):
   """
   Genera un cuadrado vacío con tres números aleatorios ya ubicados.
@@ -31,12 +34,10 @@ def generate_empty_square(square_size, positions):
         empty_square[(position - 1) // square_size][(position - 1) % square_size] = positions[position]
         break
 
-  return empty_square
-########################################
+  return empty_square, occupied_positions
 
-# Tamaño del cuadrado.
-square_size = 3
 
+# Función para generar el cuadrado guía con los núemros posicionados correctamente.
 def create_square(square_size):
     
     # Creo las variables necesarias.
@@ -122,13 +123,52 @@ def create_square(square_size):
     for row in square:
        print(row)
    
-   ########################################################################## 
-    # Genero el cuadrado vacío.
-    empty_square = generate_empty_square(square_size, positions)
+    # Genero el cuadrado vacío y obtengo las posiciones ocupadas.
+    empty_square, occupied_positions = generate_empty_square(square_size, positions)
 
     # Imprimimos el cuadrado vacío.
     for row in empty_square:
      print(row)
-   ########################################################################
+     
+     # Obtener los números disponibles que no están inicialmente ocupados.
+    available_numbers = [v for k, v in positions.items() if k not in occupied_positions]
+
+    # Solicitar al usuario ingresar números en el cuadrado vacío.
+    print("\nIngrese los números disponibles en las posiciones libres del cuadrado vacío:")
+
+    for i in range(square_size):
+        for j in range(square_size):
+            if empty_square[i][j] is None:
+                print(f"Números disponibles: {available_numbers}")
+                while True:
+                    user_number = int(input(f"Ingrese un número para la posición [{i+1}][{j+1}]: "))
+                    if user_number in available_numbers:
+                        empty_square[i][j] = user_number
+                        available_numbers.remove(user_number)
+                        break
+                    else:
+                        print("El número ingresado no es válido. Intente de nuevo.")
+            else:
+                print(f"La posición [{i+1}][{j+1}] ya está ocupada.")
+
+    # Imprimir el cuadrado vacío con los números ingresados por el usuario.
+    print("\nCuadrado con números ingresados por el usuario:")
+    for row in empty_square:
+        print(row)
+
+    # Verificar si todos los números coinciden con los del cuadrado generado.
+    is_identical = True
+    for i in range(square_size):
+        for j in range(square_size):
+            if empty_square[i][j] != square[i][j]:
+                is_identical = False
+                break
+        if not is_identical:
+            break
+
+    if is_identical:
+        print("\n¡Los números ingresados coinciden con los del cuadrado generado!")
+    else:
+        print("\nLos números ingresados no coinciden con los del cuadrado generado.")
 
 create_square(square_size)

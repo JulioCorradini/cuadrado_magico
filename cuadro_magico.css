@@ -1,0 +1,41 @@
+#game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #number-list {
+    margin-bottom: 20px;
+  }
+  
+  #numbers {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #numbers li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #board {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap: 1px;
+  }
+  
+  #board div {
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+  
+  .selected {
+    background-color: yellow;
+  }
+  
