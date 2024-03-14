@@ -1,7 +1,7 @@
 
 
 // Función que genera la lista de números aleatórios.
-function generateRandomNumbers() {
+/*function generateRandomNumbers() {
     const min_value = Math.floor(Math.random() * 1000) + 1;
     const gap_value = Math.floor(Math.random() * 5) * 2 + 1;
     const values = [];
@@ -43,7 +43,7 @@ function generateRandomNumbers() {
     values[median - 3] = aux_var;
 
     return values;
-  }
+  }*/
 
 /*// Función para mezclar de forma aleatoria una lista
 function shuffleList(list) {
@@ -55,7 +55,7 @@ function shuffleList(list) {
     return shuffledList;
   }*/
 
-function createHelpNumbers(orderedNumbers) {
+/*function createHelpNumbers(orderedNumbers) {
     const helpNumbers = Array.from({ length: 3 }, () => Array(3).fill(null));
     const occupiedPositions = [];
   
@@ -74,10 +74,10 @@ function createHelpNumbers(orderedNumbers) {
     }
     
     return helpNumbers;
-}
+}*/
 
 // Función para renderizar los números en el cuadrado central
-function renderPresetNumbers(board, helpNumbers) {
+/*function renderPresetNumbers(board, helpNumbers) {
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             const cell = board.querySelector(`[data-row="${i}"][data-col="${j}"]`);
@@ -88,28 +88,61 @@ function renderPresetNumbers(board, helpNumbers) {
             }
         }
     }
-}
+}*/
 
-document.addEventListener('DOMContentLoaded', function() {
+// Función para verificar si el cuadro está completo y si la sumatoria es la misma en filas, columnas y diagonales
+/*function verificarCuadroCompleto(board) {
+  // Sumas de las filas, columnas y diagonales
+  const sumas = [];
+
+  // Sumar las filas
+  for (let i = 0; i < 3; i++) {
+      let sumaFila = 0;
+      for (let j = 0; j < 3; j++) {
+          sumaFila += parseInt(board[i][j], 10);
+      }
+      sumas.push(sumaFila);
+  }
+
+  // Sumar las columnas
+  for (let j = 0; j < 3; j++) {
+      let sumaColumna = 0;
+      for (let i = 0; i < 3; i++) {
+          sumaColumna += parseInt(board[i][j], 10);
+      }
+      sumas.push(sumaColumna);
+  }
+
+  // Sumar las diagonales
+  let sumaDiagonal1 = parseInt(board[0][0], 10) + parseInt(board[1][1], 10) + parseInt(board[2][2], 10);
+  let sumaDiagonal2 = parseInt(board[0][2], 10) + parseInt(board[1][1], 10) + parseInt(board[2][0], 10);
+  sumas.push(sumaDiagonal1, sumaDiagonal2);
+
+  // Verificar si todas las sumas son iguales
+  const primeraSuma = sumas[0];
+  return sumas.every(suma => suma === primeraSuma);
+}*/
+
+/*document.addEventListener('DOMContentLoaded', function() {
     const numbersList = document.getElementById('numbers');
     const board = document.getElementById('board');
     
     const selectedNumbers = [];
-    const orderedNumbers = generateRandomNumbers();
+    //const orderedNumbers = generateRandomNumbers();
     //const availableNumbers = shuffleList(orderedNumbers);
-    const helpNumbers = createHelpNumbers(orderedNumbers);
-    const availableNumbers = orderedNumbers.filter(number => !helpNumbers.flat().includes(number));
+    //const helpNumbers = createHelpNumbers(orderedNumbers);
+    //const availableNumbers = orderedNumbers.filter(number => !helpNumbers.flat().includes(number));
 
     
     // Rellenar la lista de números con los números generados aleatoriamente
-    availableNumbers.forEach(number => {
+    /*availableNumbers.forEach(number => {
         const listItem = document.createElement('li');
         listItem.innerText = number;
         numbersList.appendChild(listItem);
-    });
+    });*/
     
     // Event listener for number selection
-    numbersList.addEventListener('click', function(event) {
+    /*numbersList.addEventListener('click', function(event) {
       const selectedNumber = event.target.innerText;
         // Verificar si el número ya está presente en el tablero
         const alreadyExists = [...board.querySelectorAll('.cell')].some(cell => cell.innerText === selectedNumber);
@@ -139,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     // Create the board with random preset numbers
-    for (let i = 0; i < 3; i++) {
+    /*for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
@@ -152,10 +185,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         board.appendChild(cell);
       }
-    }
+    }*/
 
     // Renderizar los números predefinidos en el cuadrado central
-    renderPresetNumbers(board, helpNumbers);
+    /*renderPresetNumbers(board, helpNumbers);
 
     // Event listener para el botón de nuevo juego
     const newGameButton = document.getElementById('new-game-button');
@@ -167,5 +200,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(orderedNumbers);
     console.log(availableNumbers);
     console.log(helpNumbers);
-  });
+  });*/
+
+  ///////////////////////////////////////////////////////////777
   

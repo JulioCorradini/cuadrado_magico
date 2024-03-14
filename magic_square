@@ -1,20 +1,16 @@
-Lógica:
-  -++++++ Crear la funcionalidad de crear el cuadrado ++++++
-  -+++++++ Crear la funcionalidad de que se generen números aleatorios para cada casillero ++++++
-  -Crear la funcionalidad para que solo se muestren algunos números
-  -+++++ Crear el algoritmo para que se generen números aleatorios que respeten las reglas del juego ++++++
-  -++++++ Conectar el diccionario con el cuadrado ++++++
+
 Cliente:
- -Renderizar los valores del diccionario en forma de cuadrado en pantalla
- -Renderizar los números que se pueden elegir
- -Lograr que al hacer click en los números se posiciones en el cuadrado
  -Lograr que al hacer click en el número del cuadro vuelva a aparecer arriba
- -Renderizar el texto que indica las reglas del jeugo
- -Colocar el fondo con el logo de Nadh detras del cuadrado y de los textos
+ -Agregar la funcionalidad de que aparezca la suma a la que se debe llegar.
+ -Quitar la funciionalidad de que se muestren números aleatorios.
+ -Colocar el fondo con el logo de Nadh detras del cuadrado +++++++
+ -Modificar el texto y su fuente +++++++++
+ -Agrandar el tamaño del cuadro
  -Asegurar la responsividad de la palicación
- -Crear la función que verifique la disposicón de los números en el cuadro del cliente con respecto al cuadro del back y determine si coinciden o no.
+ -Agregar la funcionalidad para que verifique que el cuadrado se completó satisfactoriamente.
  -Si hay coincidencia se renderiza el mensaje de victoria
  -Si no hay coincidencia se renderiza el mensaje de perdida
-Flask:
-  -Enmarcar la aplicación en un entorno de Flask para que genere las páginas estáticas de HTML
+ -Correjir el problema de que se puede hacer click en el medio de los casilleros.
+ -Correjir el problema de la carga del juego.
+Deploy:
   -Subirlo a Github Pages
