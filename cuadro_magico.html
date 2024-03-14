@@ -6,7 +6,7 @@
   <title>Magic Square Game</title>
   <link rel="stylesheet" href="cuadro_magico.css">
 </head>
-<body>
+<!--body>
   <div id="game">
     <div id="number-list">
       <h2>Elige un número:</h2>
@@ -16,6 +16,24 @@
     </div>
     <div id="board"></div>
   </div>
+  <button id="new-game-button">Nuevo juego</button>
   <script src="cuadro_mágico.js"></script>
-</body>
+</body-->
+<body>
+    <div id="game">
+      <div id="number-list">
+        <h2>Hola, estás listo para jugar.</h2>
+        <h2>El objetivo de este juego es muy sencillo. Tenés que ordenar los números en el cuadrado con el objetivo de que cada fila, columna y diagonal sumen el mismos número.</h2>
+        <h2>Haz Click en el número y luego en el casillero para ubicarlo.</h2>
+        <ul id="numbers">
+          
+        </ul>
+      </div>
+      <div id="game-container"> <!-- Nuevo contenedor para el tablero y el botón -->
+        <div id="board"></div>
+        <button id="new-game-button">Nuevo juego</button>
+      </div>
+    </div>
+    <script src="cuadro_mágico.js"></script>
+  </body>
 </html>

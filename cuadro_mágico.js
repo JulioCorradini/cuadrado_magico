@@ -65,8 +65,8 @@ function createHelpNumbers(orderedNumbers) {
   
         if (!occupiedPositions.includes(position)) {
           occupiedPositions.push(position);
-          const row = Math.floor((position) / 3);
-          const col = (position) % 3;
+          const row = Math.floor(position / 3);
+          const col = position % 3;
           helpNumbers[row][col] = orderedNumbers[position];
           break;
         }
@@ -110,30 +110,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event listener for number selection
     numbersList.addEventListener('click', function(event) {
-      /*const selectedNumber = event.target.innerText;
-      if (!selectedNumbers.includes(selectedNumber)) {
-        selectedNumbers.push(selectedNumber);
-        event.target.classList.add('selected');
-      }*/
       const selectedNumber = event.target.innerText;
-    // Verificar si el número ya está presente en el tablero
-    const alreadyExists = [...board.querySelectorAll('.cell')].some(cell => cell.innerText === selectedNumber);
-    if (!selectedNumbers.includes(selectedNumber) && !alreadyExists) {
-        selectedNumbers.push(selectedNumber);
-        event.target.classList.add('selected');
-    }
+        // Verificar si el número ya está presente en el tablero
+        const alreadyExists = [...board.querySelectorAll('.cell')].some(cell => cell.innerText === selectedNumber);
+        if (!selectedNumbers.includes(selectedNumber) && !alreadyExists) {
+            selectedNumbers.push(selectedNumber);
+            event.target.classList.add('selected');
+        }
     });
   
     // Event listener for board cell selection
     board.addEventListener('click', function(event) {
-      /*const selectedCell = event.target;
-      if (!selectedCell.classList.contains('selected') && selectedNumbers.length > 0) {
-        if (!selectedCell.classList.contains('preset') && !selectedCell.innerText) {
-            const number = selectedNumbers.shift();
-            selectedCell.innerText = number;
-            selectedCell.classList.add('selected');
-          }
-        }*/
         const selectedCell = event.target;
         if (!selectedCell.classList.contains('selected') && selectedNumbers.length > 0) {
           if (!selectedCell.classList.contains('preset') && !selectedCell.innerText) {
@@ -169,6 +156,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Renderizar los números predefinidos en el cuadrado central
     renderPresetNumbers(board, helpNumbers);
+
+    // Event listener para el botón de nuevo juego
+    const newGameButton = document.getElementById('new-game-button');
+    newGameButton.addEventListener('click', function() {
+        location.reload(); // Recargar la página
+    });
 
     // ESTON CONSOLE LOG NO VAN
     console.log(orderedNumbers);

@@ -2,10 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #8a2be2, #ee82ee); /* gradiente de púrpura a violeta */
   }
   
   #number-list {
     margin-bottom: 20px;
+    text-align: center; /* Centra horizontalmente el contenido */
+  }
+
+  #number-list h2 {
+    margin: 10px 0; /* Espaciado vertical entre los títulos */
+  }
+
+  #number-list ul {
+    padding: 0;
   }
   
   #numbers {
@@ -36,6 +48,48 @@
   }
   
   .selected {
-    background-color: yellow;
+    background-color: #c55ec5;
   }
-  
+
+  .cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell.selected {
+    background-color: lightblue; /* Ajusta el color de fondo de las celdas seleccionadas según sea necesario */
+}
+
+.cell.selected.preset {
+    background-color: #e6f7ff; /* Ajusta el color de fondo de las celdas predefinidas seleccionadas según sea necesario */
+}
+
+#game-container {
+    text-align: center; /* Centra horizontalmente el contenido */
+    margin-top: 20px; /* Agrega espacio en la parte superior */
+    margin-bottom: 20px; /* Agrega espacio en la parte inferior */
+  }
+
+  #new-game-button {
+    margin-top: 20px;
+    background-color: #ee82ee; /* Fondo violeta */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    cursor: pointer; /* Cursor de puntero al pasar */
+    transition: all 0.3s ease; /* Transición suave */
+  }
+
+  #new-game-button:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
+}
+
+#new-game-button:active {
+    transform: translateY(3px); /* Efecto de rebote hacia abajo al hacer clic */
+    box-shadow: none; /* Eliminar sombra al hacer clic */
+}
